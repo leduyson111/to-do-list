@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Libraries;
+
+use PDO;
+
 class Database
 {
     private $host = 'localhost';
@@ -24,7 +28,7 @@ class Database
 
         try {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
-        } catch (PDOException $e) {
+        } catch (\PDOException $e) {
             $this->error = $e->getMessage();
             echo $this->error;
         }
@@ -40,8 +44,44 @@ class Database
         return $this->stmt->execute();
     }
 
-    public function testConnection()
+    // Bind values
+    public function bind($param, $value, $type = null)
     {
-        
+        if (is_null($type)) {
+            switch (true) {
+                case is_int($value):
+                    $type = PDO::PARAM_INT;
+                    break;
+                case is_bool($value):
+                    $type = PDO::PARAM_BOOL;
+                    break;
+                case is_null($value):
+                    $type = PDO::PARAM_NULL;
+                    break;
+                default:
+                    $type = PDO::PARAM_STR;
+                    break;
+            }
+        }
+        $this->stmt->bindValue($param, $value, $type);
+    }
+
+    // Get result set as array of objects
+    public function resultSet()
+    {
+        $this->execute();
+        return $this->stmt->fetchAll();
+    }
+
+    // Get single record as object
+    public function single()
+    {
+        $this->execute();
+        return $this->stmt->fetch();
+    }
+
+    public function rowCount()
+    {
+        return $this->stmt->rowCount();
     }
 }
