@@ -2,7 +2,7 @@
 <div class="card card-body mb-3">
     <div class="row">
         <div class="col-3 mr-3 mb-3">
-            <a type="button" href="<?php echo URL_ROOT; ?>?url=works/create" class="btn btn-primary">Create + </a>
+            <a type="button" href="<?php echo URL_ROOT; ?>/works/create" class="btn btn-primary">Create + </a>
         </div>
     </div>
     <div class="card-block">

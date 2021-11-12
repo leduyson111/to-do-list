@@ -1,9 +1,9 @@
 <?php require APP_ROOT . '/views/inc/header.php' ?>
-<a href="<?php echo URL_ROOT; ?>/posts" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
+<a href="<?php echo URL_ROOT; ?>/" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
 <div class="card card-body bg-light mt-5">
    <h3>Add work</h3>
    <p>Create a new work</p>
-   <form action="<?php echo URL_ROOT; ?>?url=posts/store" method="POST">
+   <form action="<?php echo URL_ROOT; ?>/posts/store" method="POST">
       <div class="form-group">
          <label for="name">Name: <sup>*</sup></label>
          <input type="text" name="name" class="form-control form-control">

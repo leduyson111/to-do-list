@@ -1,7 +1,7 @@
 <?php
 
-require __DIR__.'/vendor/autoload.php';
-require_once 'app/config/config.php';
+require '../vendor/autoload.php';
+require_once '../app/config/config.php';
 
 
 error_reporting(-1);
