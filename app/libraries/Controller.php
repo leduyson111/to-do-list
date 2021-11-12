@@ -23,8 +23,8 @@ class Controller
   public function view($view, $data = [])
   {
     // Check for view file
-    if (file_exists('../app/views/' . $view . '.php')) {
-      require_once('../app/views/' . $view . '.php');
+    if (file_exists(APP_ROOT . '\Views\\' . $view . '.php')) {
+      require_once(APP_ROOT . '\Views\\' . $view . '.php');
     } else {
       /// View does not exists
       die('View does not exists');
