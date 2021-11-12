@@ -1,20 +1,30 @@
 <?php require APP_ROOT . '/views/inc/header.php' ?>
 <a href="<?php echo URL_ROOT; ?>/posts" class="btn btn-light"><i class="fa fa-backward"></i> Back</a>
 <div class="card card-body bg-light mt-5">
-   <h3>Add Post</h3>
-   <p>Create a new post</p>
-   <form action="<?php echo URL_ROOT; ?>/posts/edit/<?php echo $data['id']; ?>" method="post">
+   <h3>Add work</h3>
+   <p>Create a new work</p>
+   <form action="<?php echo URL_ROOT; ?>?url=posts/update<?php echo $data['id'] ?>" method="POST">
       <div class="form-group">
-         <label for="title">Title: <sup>*</sup></label>
-         <input type="text" name="title" class="form-control form-control <?php echo (!empty($data['title_err'])) ? 'is-invalid' : '';?>" value="<?php echo $data['title']; ?>">
-         <span class="invalid-feedback"><?php echo $data['title_err']; ?></span>
+         <label for="name">Name: <sup>*</sup></label>
+         <input type="text" name="name" class="form-control form-control">
       </div>
       <div class="form-group">
-         <label for="name">Body: <sup>*</sup></label>
-         <textarea name="body" rows="<?php substr_count( $data['body'], "\r\n" ); ?>" class="form-control form-control <?php echo (!empty($data['body_err'])) ? 'is-invalid' : ''; ?>"><?php echo $data['body']; ?></textarea>
-         <span class="invalid-feedback"><?php echo $data['body_err']; ?></span>
+         <label for="name">Start date: <sup>*</sup></label>
+         <input type="date" name="start_date" class="form-control form-control">
       </div>
-      <input type="submit" class="btn btn-success" value="Submit"/>
+      <div class="form-group">
+         <label for="name">End date: <sup>*</sup></label>
+         <input type="date" name="end_date" class="form-control form-control">
+      </div>
+      <div class="form-group">
+         <label for="status">Status</label>
+         <select class="form-control" id="status" name="status">
+            <option value="1">Planning</option>
+            <option value="2">Doing</option>
+            <option value="3">Complete</option>
+         </select>
+      </div>
+      <input type="submit" class="btn btn-success" value="Submit" />
    </form>
 </div>
 <?php require APP_ROOT . '/views/inc/footer.php' ?>

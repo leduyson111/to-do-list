@@ -47,6 +47,7 @@
                             </td>
                             <td>
                                 <form>
+                                    <a type="button" href="<?php echo URL_ROOT; ?>?url=works/edit?id=<?=$work->id?>" class="btn btn-primary btn-sm">Update </a>
                                     <input type="submit" value="Delete" class="btn btn-danger btn-sm">
                                 </form>
                             </td>

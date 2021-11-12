@@ -3,7 +3,7 @@
 <div class="card card-body bg-light mt-5">
    <h3>Add work</h3>
    <p>Create a new work</p>
-   <form action="<?php echo URL_ROOT; ?>/posts/store" method="POST">
+   <form action="<?php echo URL_ROOT; ?>/works/store" method="POST">
       <div class="form-group">
          <label for="name">Name: <sup>*</sup></label>
          <input type="text" name="name" class="form-control form-control">
